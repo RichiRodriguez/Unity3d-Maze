@@ -7,10 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public Maze mazePrefab;
 
-    public int sizeX, sizeY;
-    public MazeCell cellPrefab;
-    private MazeCell[,] cells;
-
     private Maze mazeInstance;
     void Start()
     {
@@ -24,16 +20,14 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
     }
-
     private void BeginGame()
     {
         mazeInstance = Instantiate(mazePrefab) as Maze;
-        //Debug.Log($"Creating new game: {mazeInstance.gameObject.name}");
+        mazeInstance.Generate();
     }
 
     private void RestartGame()
     {
-        //Debug.Log($"Destroying {mazeInstance.gameObject.name}");
         Destroy(mazeInstance.gameObject);
         BeginGame();
     }
