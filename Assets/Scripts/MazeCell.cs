@@ -8,7 +8,7 @@ public class MazeCell : MonoBehaviour
 	private MazeCellEdge[] edges = new MazeCellEdge[MazeDirections.Count];
 
 	public MazePassage passagePrefab;
-	public MazeWall wallPre
+	public MazeWall wallPrefab;
 
 	public MazeCellEdge GetEdge(MazeDirection direction) {
 		return edges[(int)direction];
